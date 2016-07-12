@@ -11,18 +11,15 @@ function httpRequest(url, callback){
 
 function showWeather(result){
     result = JSON.parse(result);
-alert(result);
-alert(result.errNum);
-    var list = result.resData.list;
-alert(list);
+    var list = result.retData;
     var table = '<table><tr><th>province_cn</th><th>district_cn</th><th>name_cn</th><th>name_en</th><th>area_id</th></tr>';
     for(var i in list){
         table += '<tr>';
-        table += '<td>'+list.province_cn+'</td>';
-        table += '<td>'+list.province_cn+'</td>';
-        table += '<td>'+list.province_cn+'</td>';
-        table += '<td>'+list.province_cn+'</td>';
-        table += '<td>'+list.province_cn+'</td>';
+        table += '<td>'+list[i].province_cn+'</td>';
+        table += '<td>'+list[i].district_cn+'</td>';
+        table += '<td>'+list[i].name_cn+'</td>';
+        table += '<td>'+list[i].name_en+'</td>';
+        table += '<td>'+list[i].area_id+'</td>';
         table += '</tr>';
     }
     table += '</table>';
