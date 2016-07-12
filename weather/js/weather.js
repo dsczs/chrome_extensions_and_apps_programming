@@ -31,5 +31,5 @@ alert(list);
 
 var city = localStorage.city;
 city = city?city:'北京';
-var url = 'http://test.dsczs.cn/weather.php?city='+city;
+var url = 'http://test.dsczs.cn/weather.php?city='+city;    //会调用百度的天气API
 httpRequest(url, showWeather);
